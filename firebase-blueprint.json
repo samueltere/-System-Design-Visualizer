@@ -1,0 +1,41 @@
+{
+  "entities": {
+    "Diagram": {
+      "title": "Diagram",
+      "description": "A system design diagram containing nodes and edges.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "nodes": { "type": "array", "items": { "type": "object" } },
+        "edges": { "type": "array", "items": { "type": "object" } },
+        "ownerId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "nodes", "edges", "ownerId", "createdAt", "updatedAt"]
+    },
+    "User": {
+      "title": "User",
+      "description": "User profile information.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    }
+  },
+  "firestore": {
+    "/diagrams/{diagramId}": {
+      "schema": "Diagram",
+      "description": "Collection of system design diagrams."
+    },
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles."
+    }
+  }
+}

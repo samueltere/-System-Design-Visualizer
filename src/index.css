@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-50: #f0f7ff;
+  --color-brand-100: #e0effe;
+  --color-brand-200: #bae0fd;
+  --color-brand-300: #7cc8fb;
+  --color-brand-400: #38a9f8;
+  --color-brand-500: #0e8ce4;
+  --color-brand-600: #026fc7;
+  --color-brand-700: #0358a1;
+  --color-brand-800: #074b85;
+  --color-brand-900: #0c3f6f;
+  --color-brand-950: #082849;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-slate-900 antialiased bg-slate-50;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+.react-flow__node {
+  @apply transition-transform duration-200;
+}
+
+.react-flow__handle {
+  @apply !w-3 !h-3 !border-2 !border-white !bg-brand-500;
+}
+
+.react-flow__edge-path {
+  @apply stroke-slate-300 stroke-[2px];
+}
+
+.react-flow__edge.animated .react-flow__edge-path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.6s linear infinite;
+}
+
+.react-flow__edge.simulating-edge .react-flow__edge-path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.4s linear infinite;
+  stroke-opacity: 0.8;
+}
+
+.react-flow__edge.active-edge .react-flow__edge-path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.15s linear infinite;
+  filter: drop-shadow(0 0 8px #38a9f8);
+  stroke-opacity: 1;
+}
+
+.react-flow__edge.active-edge {
+  z-index: 1000 !important;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.glass-panel {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.metric-card {
+  @apply p-3 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all duration-200;
+}

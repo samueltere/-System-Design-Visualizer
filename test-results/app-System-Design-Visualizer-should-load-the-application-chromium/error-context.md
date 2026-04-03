@@ -1,0 +1,200 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: app.spec.ts >> System Design Visualizer >> should load the application
+- Location: tests/e2e/app.spec.ts:8:3
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByText('System')
+Expected: visible
+Error: strict mode violation: getByText('System') resolved to 12 elements:
+    1) <h1 class="text-2xl font-display font-black tracking-tight text-slate-800 leading-none mb-0.5">…</h1> aka getByRole('heading', { name: 'SystemViz' })
+    2) <span class="text-[10px] font-medium text-slate-400 uppercase tracking-tight">System Node</span> aka getByText('System Node').first()
+    3) <span class="text-[10px] font-medium text-slate-400 uppercase tracking-tight">System Node</span> aka getByText('System Node').nth(1)
+    4) <span class="text-[10px] font-medium text-slate-400 uppercase tracking-tight">System Node</span> aka getByText('System Node').nth(2)
+    5) <span class="text-[10px] font-medium text-slate-400 uppercase tracking-tight">System Node</span> aka getByText('System Node').nth(3)
+    6) <span class="text-[10px] font-medium text-slate-400 uppercase tracking-tight">System Node</span> aka getByText('System Node').nth(4)
+    7) <span class="text-[10px] font-medium text-slate-400 uppercase tracking-tight">System Node</span> aka getByText('System Node').nth(5)
+    8) <span class="text-[10px] font-medium text-slate-400 uppercase tracking-tight">System Node</span> aka locator('div:nth-child(7) > .flex > .text-\\[10px\\]')
+    9) <span class="text-[10px] font-medium text-slate-400 uppercase tracking-tight">System Node</span> aka locator('div:nth-child(8) > .flex > .text-\\[10px\\]')
+    10) <p class="text-[11px] text-brand-600 leading-relaxed font-medium">Connect nodes to simulate data flow. Use the simu…</p> aka getByText('Connect nodes to simulate')
+    ...
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for getByText('System')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e9]:
+        - heading "SystemViz" [level=1] [ref=e10]
+        - paragraph [ref=e11]: Architectural Engine
+    - button "Login with Google" [ref=e13]:
+      - img [ref=e14]
+      - text: Login with Google
+  - main [ref=e17]:
+    - complementary [ref=e18]:
+      - generic [ref=e19]:
+        - heading "Components" [level=2] [ref=e20]
+        - paragraph [ref=e21]: Drag & drop to architect
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - img [ref=e25]
+          - generic [ref=e28]:
+            - generic [ref=e29]: API Server
+            - generic [ref=e30]: System Node
+        - generic [ref=e31]:
+          - img [ref=e33]
+          - generic [ref=e37]:
+            - generic [ref=e38]: Database
+            - generic [ref=e39]: System Node
+        - generic [ref=e40]:
+          - img [ref=e42]
+          - generic [ref=e44]:
+            - generic [ref=e45]: Load Balancer
+            - generic [ref=e46]: System Node
+        - generic [ref=e47]:
+          - img [ref=e49]
+          - generic [ref=e52]:
+            - generic [ref=e53]: Cache
+            - generic [ref=e54]: System Node
+        - generic [ref=e55]:
+          - img [ref=e57]
+          - generic [ref=e60]:
+            - generic [ref=e61]: Client
+            - generic [ref=e62]: System Node
+        - generic [ref=e63]:
+          - img [ref=e65]
+          - generic [ref=e67]:
+            - generic [ref=e68]: Frontend
+            - generic [ref=e69]: System Node
+        - generic [ref=e70]:
+          - img [ref=e72]
+          - generic [ref=e74]:
+            - generic [ref=e75]: Storage
+            - generic [ref=e76]: System Node
+        - generic [ref=e77]:
+          - img [ref=e79]
+          - generic [ref=e81]:
+            - generic [ref=e82]: Message Queue
+            - generic [ref=e83]: System Node
+      - generic [ref=e84]:
+        - heading "Pro Tip" [level=4] [ref=e85]
+        - paragraph [ref=e86]: Connect nodes to simulate data flow. Use the simulation panel to test system limits.
+    - generic [ref=e87]:
+      - generic [ref=e89]:
+        - img [ref=e92]
+        - heading "Architect Your Vision" [level=2] [ref=e94]
+        - paragraph [ref=e95]: The next-generation system design visualizer. Create, simulate, and optimize your cloud architecture with real-time performance metrics.
+        - generic [ref=e96]:
+          - button "Start Designing Now" [ref=e97]:
+            - img [ref=e98]
+            - text: Start Designing Now
+          - paragraph [ref=e101]: Secure Google Authentication
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - generic [ref=e104]: ∞
+            - generic [ref=e105]: Real-time
+          - generic [ref=e106]:
+            - generic [ref=e107]: 100%
+            - generic [ref=e108]: Reactive
+          - generic [ref=e109]:
+            - generic [ref=e110]: SQL
+            - generic [ref=e111]: Persistence
+      - generic [ref=e113]:
+        - generic [ref=e115]:
+          - generic:
+            - img
+        - img [ref=e116]
+        - generic [ref=e118]:
+          - button "zoom in" [ref=e119] [cursor=pointer]:
+            - img [ref=e120]
+          - button "zoom out" [ref=e122] [cursor=pointer]:
+            - img [ref=e123]
+          - button "fit view" [ref=e125] [cursor=pointer]:
+            - img [ref=e126]
+          - button "toggle interactivity" [ref=e128] [cursor=pointer]:
+            - img [ref=e129]
+        - img "React Flow mini map" [ref=e132]
+        - generic [ref=e134]:
+          - generic [ref=e135]:
+            - img [ref=e137]
+            - generic [ref=e140]:
+              - heading "Simulation" [level=3] [ref=e141]
+              - paragraph [ref=e142]: Engine Control
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - generic [ref=e145]:
+                - generic [ref=e146]: Requests / Sec
+                - generic [ref=e147]: 2 RPS
+              - slider [ref=e148] [cursor=pointer]: "2"
+            - generic [ref=e149]:
+              - generic [ref=e150]:
+                - generic [ref=e151]: Node Latency
+                - generic [ref=e152]: 500ms
+              - slider [ref=e153] [cursor=pointer]: "500"
+            - button "Launch Simulation" [ref=e154]
+        - generic [ref=e156]:
+          - generic [ref=e157]:
+            - generic [ref=e158]: Engine Status
+            - generic [ref=e161]: Ready
+          - button "Clear Canvas" [ref=e163]:
+            - img [ref=e164]
+        - link "React Flow attribution" [ref=e167] [cursor=pointer]:
+          - /url: https://reactflow.dev
+          - text: React Flow
+  - contentinfo [ref=e169]:
+    - generic [ref=e170]:
+      - generic [ref=e171]: © 2026 System Design Visualizer
+      - generic [ref=e173]: v2.4.0-stable
+    - generic [ref=e174]:
+      - generic [ref=e177]: Socket.io Engine
+      - generic [ref=e180]: PostgreSQL Persistence
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | 
+  3  | test.describe('System Design Visualizer', () => {
+  4  |   test.beforeEach(async ({ page }) => {
+  5  |     await page.goto('/');
+  6  |   });
+  7  | 
+  8  |   test('should load the application', async ({ page }) => {
+  9  |     await expect(page).toHaveTitle(/System Design Visualizer/);
+> 10 |     await expect(page.getByText('System', { exact: false })).toBeVisible();
+     |                                                              ^ Error: expect(locator).toBeVisible() failed
+  11 |     await expect(page.getByText('Viz', { exact: false })).toBeVisible();
+  12 |   });
+  13 | 
+  14 |   test('should show simulation panel', async ({ page }) => {
+  15 |     await expect(page.getByRole('heading', { name: 'Simulation' })).toBeVisible();
+  16 |     await expect(page.getByRole('button', { name: 'Launch Simulation' })).toBeVisible();
+  17 |   });
+  18 | 
+  19 |   test('should show sidebar with components', async ({ page }) => {
+  20 |     await expect(page.getByRole('heading', { name: 'Components' })).toBeVisible();
+  21 |     await expect(page.getByText('API Server', { exact: true })).toBeVisible();
+  22 |     await expect(page.getByText('Database', { exact: true })).toBeVisible();
+  23 |   });
+  24 | });
+  25 | 
+```

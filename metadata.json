@@ -1,0 +1,5 @@
+{
+  "name": "System Design Visualizer",
+  "description": "A real-time collaborative tool for designing and visualizing system architectures with drag-and-drop components and live updates.",
+  "requestFramePermissions": []
+}
